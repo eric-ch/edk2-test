@@ -25,6 +25,7 @@
 [defines]
   BASE_NAME            = SctGuidLib
   COMPONENT_TYPE       = LIBRARY
+  MODULE_TYPE          = UEFI_APPLICATION
 
 [sources.common]
   SctGuidLib.c

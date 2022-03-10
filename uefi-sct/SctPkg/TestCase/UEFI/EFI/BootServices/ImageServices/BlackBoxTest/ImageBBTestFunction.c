@@ -161,9 +161,9 @@ BBTestLoadImageInterfaceTest (
   //Checkpoint 8:
   //4.1.2.8  Call LoadImage to load image for HII protocol
   //
-  BBTestLoadImageInterfaceTestCheckPoint8(StandardLib);
+  //BBTestLoadImageInterfaceTestCheckPoint8(StandardLib);
 
-  BBTestLoadImageInterfaceTestCheckPoint9(StandardLib);
+  //BBTestLoadImageInterfaceTestCheckPoint9(StandardLib);
 #endif  
   return EFI_SUCCESS;
 }

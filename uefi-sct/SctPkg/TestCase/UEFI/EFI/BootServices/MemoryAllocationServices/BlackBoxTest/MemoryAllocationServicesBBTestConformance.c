@@ -288,7 +288,7 @@ BBTestGetMemoryMapConsistencyTest (
                  L"%a:%d:Status - %r",
                  __FILE__,
                  (UINTN)__LINE__,
-                 Status
+                 Status2
                  ); 
 
   FreeMemoryMap ();
@@ -1075,84 +1075,6 @@ BBTestAllocatePoolConsistencyTest (
                      );
     }
   }
-
-  FreeMemoryMap ();
-  return EFI_SUCCESS;
-}
-
-/**
- *  Entrypoint for gtBS->FreePool () Consistency Test.
- *  @param This a pointer of EFI_BB_TEST_PROTOCOL.
- *  @param ClientInterface a pointer to the interface to be tested.
- *  @param TestLevel test "thoroughness" control.
- *  @param SupportHandle a handle containing protocols required.
- *  @return EFI_SUCCESS Finish the test successfully.
- */
-//
-// TDS 3.5
-//
-EFI_STATUS
-BBTestFreePoolConsistencyTest (
-  IN EFI_BB_TEST_PROTOCOL       *This,
-  IN VOID                       *ClientInterface,
-  IN EFI_TEST_LEVEL             TestLevel,
-  IN EFI_HANDLE                 SupportHandle
-  )
-{
-  EFI_STANDARD_TEST_LIBRARY_PROTOCOL   *StandardLib;
-  EFI_STATUS                           Status;
-  //VOID                                 *Memory;
-  EFI_TEST_ASSERTION                   AssertionType;
-
-  //
-  // Get the Standard Library Interface
-  //
-  Status = gtBS->HandleProtocol (
-                   SupportHandle,
-                   &gEfiStandardTestLibraryGuid,
-                   (VOID **) &StandardLib
-                   );
-
-  if (EFI_ERROR(Status)) {
-    return Status;
-  }
-
-  Status = InitMemoryMap ();
-  if (EFI_ERROR(Status)) {
-    StandardLib->RecordAssertion (
-                   StandardLib,
-                   EFI_TEST_ASSERTION_FAILED,
-                   gTestGenericFailureGuid,
-                   L"InitMemoryMap - Allocate memory map buffer",
-                   L"%a:%d:Status - %r",
-                   __FILE__,
-                   (UINTN)__LINE__,
-                   Status
-                   );
-    return Status;
-  }
-
-  //
-  // 3.5.2.1  FreePool should not succeed when the Buffer is NULL
-  //
-  Status = gtBS->FreePool (
-                   NULL // invalid
-                   );
-  if (Status == EFI_INVALID_PARAMETER) {
-    AssertionType = EFI_TEST_ASSERTION_PASSED;
-  } else {
-    AssertionType = EFI_TEST_ASSERTION_FAILED;
-  }
-  StandardLib->RecordAssertion (
-                 StandardLib,
-                 AssertionType,
-                 gMemoryAllocationServicesConsistencyTestAssertionGuid042,
-                 L"BS.FreePool - Buffer is NULL",
-                 L"%a:%d:Status - %r",
-                 __FILE__,
-                 (UINTN)__LINE__,
-                 Status
-                 );
 
   FreeMemoryMap ();
   return EFI_SUCCESS;

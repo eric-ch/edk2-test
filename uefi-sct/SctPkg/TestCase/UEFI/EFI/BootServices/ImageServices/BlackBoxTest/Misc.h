@@ -29,6 +29,7 @@ Abstract:
 
 #include "ImageBBTest.h"
 #include "ProtocolDefinition.h"
+#include EFI_TEST_PROTOCOL_DEFINITION(TestRecoveryLibrary)
 
 typedef struct {
   VOID          *Registration;

@@ -86,15 +86,6 @@ EFI_BB_TEST_ENTRY_FIELD gBBTestEntryField[] = {
     BBTestAllocatePoolConsistencyTest
   },
   {
-    MEMORY_ALLOCATION_SERVICES_FREEPOOL_CONSISTENCY_GUID,
-    L"FreePool_Conf",
-    L"Consistency Test for FreePool",
-    EFI_TEST_LEVEL_MINIMAL,
-    gSupportProtocolGuid1,
-    EFI_TEST_CASE_AUTO,
-    BBTestFreePoolConsistencyTest
-  },
-  {
     MEMORY_ALLOCATION_SERVICES_GETMEMORYMAP_INTERFACE_GUID,
     L"GetMemoryMap_Func",
     L"Interface Test for GetMemoryMap",
@@ -130,16 +121,6 @@ EFI_BB_TEST_ENTRY_FIELD gBBTestEntryField[] = {
     EFI_TEST_CASE_AUTO,
     BBTestAllocatePoolInterfaceTest
   },
-  {
-    MEMORY_ALLOCATION_SERVICES_FREEPOOL_INTERFACE_GUID,
-    L"FreePool_Func",
-    L"Interface Test for FreePool",
-    EFI_TEST_LEVEL_DEFAULT,
-    gSupportProtocolGuid1,
-    EFI_TEST_CASE_AUTO,
-    BBTestFreePoolInterfaceTest
-  },
-
 #ifdef EFI_TEST_EXHAUSTIVE
   {
     MEMORY_ALLOCATION_SERVICES_GETMEMORYMAP_STRESS_TEST_GUID,

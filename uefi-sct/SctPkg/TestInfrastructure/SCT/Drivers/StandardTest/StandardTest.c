@@ -1088,7 +1088,10 @@ Returns:
 
   } else {
     StslWriteLogFile (Private, DashLine);
-    
+
+    SctSPrint (Buffer, EFI_MAX_PRINT_BUFFER, L"Arm ACS Version: %s\n", L""ACS_VERSION);
+    StslWriteLogFile (Private, Buffer);
+
     SctSPrint (Buffer, EFI_MAX_PRINT_BUFFER, L"%s\n", Private->EntryName);
     StslWriteLogFile (Private, Buffer);
     SctSPrint (Buffer, EFI_MAX_PRINT_BUFFER, L"Revision 0x%08x\n", Private->TestRevision);
