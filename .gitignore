@@ -1,3 +1,11 @@
 Build/
 tags/
 *.[od]
+uefi-sct/SctPkg/BBR/
+uefi-sct/SctPkg/TestCase/UEFI/EFI/BootServices/SbbrBootServices/
+uefi-sct/SctPkg/TestCase/UEFI/EFI/Generic/SbbrEfiSpecVerLvl/
+uefi-sct/SctPkg/TestCase/UEFI/EFI/Generic/SbbrRequiredUefiProtocols/
+uefi-sct/SctPkg/TestCase/UEFI/EFI/Generic/SbbrSmbios/
+uefi-sct/SctPkg/TestCase/UEFI/EFI/Generic/SbbrSysEnvConfig/
+uefi-sct/SctPkg/TestCase/UEFI/EFI/RuntimeServices/SBBRRuntimeServices/
+uefi-sct/SctPkg/UEFI/BBR_SCT.dsc
